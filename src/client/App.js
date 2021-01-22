@@ -1,9 +1,13 @@
 import React from 'react';
-import Header from './components/Header'
+import Header from './components/Header';
+import CryptoTable from './components/CryptoTable';
 
 const App = () => {
   return (
-    <Header />
+    <>
+      <Header />
+      <CryptoTable />
+    </>
   )
 }
 
