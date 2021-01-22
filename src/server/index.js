@@ -5,7 +5,9 @@ require('dotenv').config();
 const API_KEY = process.env.CMC_API_KEY;
 
 const app = express();
+var cors = require('cors');
 
+app.use(cors());
 app.use(express.static('dist'));
 
 app.get('/api/getCryptoData', (req, res) => {
