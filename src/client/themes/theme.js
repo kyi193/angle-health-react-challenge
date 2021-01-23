@@ -6,7 +6,7 @@ export const useStyles = makeStyles(
       display: 'flex',
       justifyContent: 'center',
       alignItems: 'center',
-      margin: theme.spacing(1),
+      marginTop: '20px',
     },
     dataGreenText: {
       color: colors.lightGreen,
