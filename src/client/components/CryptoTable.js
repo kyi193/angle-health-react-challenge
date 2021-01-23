@@ -74,7 +74,7 @@ const CryptoTable = () => {
           <TableBody>
             {cryptoList &&
               cryptoList.map((cryptocurrency, i) => (
-                <TableRow key={i}>
+                <TableRow className={styles.cryptoRow} key={i}>
                   <TableCell component='th' scope='row'>
                     <Typography>{i + 1}</Typography>
                   </TableCell>

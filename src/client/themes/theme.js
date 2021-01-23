@@ -36,6 +36,11 @@ export const useStyles = makeStyles(
     },
     circulatingSupplyText: {
       color: colors.darkGray,
+    },
+    cryptoRow: {
+      "&:hover": {
+        backgroundColor: `${colors.lightGray} !important`
+      }
     }
   })
 );
@@ -43,4 +48,5 @@ export const useStyles = makeStyles(
 export const colors = {
   lightGreen: '#1ec749',
   darkGray: 'rgba(105, 105, 105, .8)',
+  lightGray: 'rgba(239, 242, 245, .4)'
 };
