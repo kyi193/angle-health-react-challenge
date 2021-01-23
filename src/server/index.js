@@ -21,7 +21,7 @@ app.get('/api/getCryptoData', (req, res) => {
     gzip: true,
     params: {
       'start': "1",
-      'limit': "2",
+      'limit': "20",
       'convert': 'USD'
     }
   };
