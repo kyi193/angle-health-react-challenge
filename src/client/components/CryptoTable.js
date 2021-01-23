@@ -122,7 +122,7 @@ const CryptoTable = () => {
                     </Typography>
                   </TableCell>
                   <TableCell component='th' scope='row'>
-                    <p>{`${parseIntegerWithCommas(cryptocurrency.circulating_supply)} (${cryptocurrency.symbol})`}</p>
+                    <Typography>{`${parseIntegerWithCommas(cryptocurrency.circulating_supply)} (${cryptocurrency.symbol})`}</Typography>
                     <ProgressBar
                       fillColor={colors.lightGraySolid}
                       borderColor="black"
