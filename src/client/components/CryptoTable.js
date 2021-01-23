@@ -12,6 +12,7 @@ import {
 } from '@material-ui/core';
 import { ArrowDropUp, ArrowDropDown } from '@material-ui/icons';
 import ProgressBar from 'react-percent-bar';
+import { CustomButton } from './Buttons';
 
 const API_URL = 'http://localhost:8080/api/getCryptoData';
 const tableHeaders = [
@@ -30,13 +31,17 @@ const CryptoTable = () => {
   const styles = useStyles();
 
   useEffect(() => {
+    fetchCryptoData();
+  }, []);
+
+  const fetchCryptoData = () => {
     Axios.get(API_URL)
       .then(res => {
         const cryptoListData = res.data.data;
         setCryptoList(cryptoListData)
       })
       .catch(e => console.error(e));
-  }, []);
+  }
 
   const parseIntegerWithCommas = (num) => {
     return num.toLocaleString('en-US',
@@ -49,6 +54,10 @@ const CryptoTable = () => {
 
   return (
     <div className={styles.cryptoTable}>
+      <CustomButton
+        onClick={() => fetchCryptoData()}
+        text='Refresh'
+      />
       <TableContainer>
         <Table aria-label='simple table'>
           <TableHead>
