@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Axios from 'axios';
-import { useStyles } from '../themes/theme';
+import { useStyles, colors } from '../themes/theme';
 import {
   Table,
   TableBody,
@@ -124,7 +124,7 @@ const CryptoTable = () => {
                   <TableCell component='th' scope='row'>
                     <p>{`${parseIntegerWithCommas(cryptocurrency.circulating_supply)} (${cryptocurrency.symbol})`}</p>
                     <ProgressBar
-                      fillColor="gray"
+                      fillColor={colors.lightGraySolid}
                       borderColor="black"
                       height="5px"
                       width="200px"

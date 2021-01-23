@@ -48,5 +48,6 @@ export const useStyles = makeStyles(
 export const colors = {
   lightGreen: '#1ec749',
   darkGray: 'rgba(105, 105, 105, .8)',
-  lightGray: 'rgba(239, 242, 245, .4)'
+  lightGray: 'rgba(239, 242, 245, .4)',
+  lightGraySolid: "#d7d9dc"
 };
