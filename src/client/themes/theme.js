@@ -33,6 +33,9 @@ export const useStyles = makeStyles(
     nameContainer: {
       display: 'flex',
       alignItems: 'center'
+    },
+    circulatingSupplyText: {
+      color: colors.darkGray,
     }
   })
 );

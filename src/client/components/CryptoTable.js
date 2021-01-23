@@ -11,6 +11,7 @@ import {
   Typography,
 } from '@material-ui/core';
 import { ArrowDropUp, ArrowDropDown } from '@material-ui/icons';
+import ProgressBar from 'react-percent-bar';
 
 const API_URL = 'http://localhost:8080/api/getCryptoData';
 const tableHeaders = [
@@ -20,7 +21,8 @@ const tableHeaders = [
   '24h',
   '7d',
   'Market Cap',
-  'Volume'
+  'Volume',
+  'Circulating Supply'
 ];
 
 const CryptoTable = () => {
@@ -70,7 +72,7 @@ const CryptoTable = () => {
                   <TableCell component='th' scope='row'>
                     <div className={styles.nameContainer}>
                       <p className={styles.dataBoldText}>{cryptocurrency.name}</p>
-                      <p className={styles.dataGrayText}>({cryptocurrency.symbol})</p>
+                      <p className={styles.dataGrayText}>{cryptocurrency.symbol}</p>
                     </div>
                   </TableCell>
                   <TableCell component='th' scope='row'>
@@ -109,6 +111,15 @@ const CryptoTable = () => {
                     <Typography>
                       ${parseIntegerWithCommas(cryptocurrency.quote.USD.volume_24h)}
                     </Typography>
+                  </TableCell>
+                  <TableCell component='th' scope='row'>
+                    <p>{`${parseIntegerWithCommas(cryptocurrency.circulating_supply)} (${cryptocurrency.symbol})`}</p>
+                    <ProgressBar
+                      fillColor="gray"
+                      borderColor="black"
+                      height="5px"
+                      width="200px"
+                      percent={(cryptocurrency.circulating_supply / cryptocurrency.total_supply) * 100} />
                   </TableCell>
                 </TableRow>
               ))}
