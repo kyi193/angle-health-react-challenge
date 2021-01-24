@@ -41,6 +41,11 @@ export const useStyles = makeStyles(
       "&:hover": {
         backgroundColor: `${colors.lightGray} !important`
       }
+    },
+    logo: {
+      height: '25px',
+      width: '25px',
+      marginRight: '10px'
     }
   })
 );

@@ -13,6 +13,7 @@ import {
 import { ArrowDropUp, ArrowDropDown } from '@material-ui/icons';
 import ProgressBar from 'react-percent-bar';
 import { CustomButton } from './Buttons';
+import logoMap from '../utils/cmc_logo_urls.json';
 
 const API_URL = 'http://localhost:8080/api/getCryptoData';
 const tableHeaders = [
@@ -80,6 +81,7 @@ const CryptoTable = () => {
                   </TableCell>
                   <TableCell component='th' scope='row'>
                     <div className={styles.nameContainer}>
+                      <img className={styles.logo} src={logoMap[cryptocurrency.symbol]} />
                       <p className={styles.dataBoldText}>{cryptocurrency.name}</p>
                       <p className={styles.dataGrayText}>{cryptocurrency.symbol}</p>
                     </div>
