@@ -26,12 +26,20 @@ const tableHeaders = [
   'Volume',
   'Circulating Supply'
 ];
+const LIVE_MODE = false;
+const INTERVAL_TIME = 10000;
 
 const CryptoTable = () => {
   const [cryptoList, setCryptoList] = useState(null);
   const styles = useStyles();
 
   useEffect(() => {
+    if (LIVE_MODE) {
+      const interval = setInterval(() => {
+        fetchCryptoData();
+      }, INTERVAL_TIME);
+      return () => clearInterval(interval);
+    }
     fetchCryptoData();
   }, []);
 
@@ -42,7 +50,7 @@ const CryptoTable = () => {
         setCryptoList(cryptoListData)
       })
       .catch(e => console.error(e));
-  }
+  };
 
   const parseIntegerWithCommas = (num) => {
     return num.toLocaleString('en-US',
