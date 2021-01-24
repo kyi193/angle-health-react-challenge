@@ -1,5 +1,6 @@
 # Angle Health React Challenge
 
+![alt text](https://i.ibb.co/QM4TY7c/Screen-Shot-2021-01-24-at-5-04-25-PM.png)
 ## Created by:
 
 - Kevin Yi
