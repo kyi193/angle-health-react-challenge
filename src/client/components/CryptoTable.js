@@ -11,6 +11,7 @@ import {
 } from '@material-ui/core';
 import { CustomButton } from './Buttons';
 import CryptoTableBody from './CryptoTableBody';
+import loadingGif from '../images/loading_Animation.gif';
 
 const API_URL = 'http://localhost:8080/api/getCryptoData';
 const tableHeaders = [
@@ -74,6 +75,8 @@ const CryptoTable = () => {
           </TableBody>
         </Table>
       </TableContainer>
+      {!cryptoList &&
+        <img className={styles.loading} src={loadingGif} />}
     </div>
   );
 };

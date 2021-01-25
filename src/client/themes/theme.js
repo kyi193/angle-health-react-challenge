@@ -46,6 +46,9 @@ export const useStyles = makeStyles(
       height: '25px',
       width: '25px',
       marginRight: '10px'
+    },
+    loading: {
+      marginLeft: '40%',
     }
   })
 );
