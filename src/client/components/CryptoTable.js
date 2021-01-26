@@ -13,7 +13,7 @@ import { CustomButton } from './Buttons';
 import CryptoTableBody from './CryptoTableBody';
 import loadingGif from '../images/loading_Animation.gif';
 
-const API_URL = 'http://localhost:8080/api/getCryptoData';
+const API_URL = '/api/getCryptoData';
 const tableHeaders = [
   'Rank',
   'Name',
@@ -57,7 +57,7 @@ const CryptoTable = () => {
         text='Refresh'
       />
       <TableContainer>
-        <Table aria-label='simple table'>
+        <Table aria-label='crypto table'>
           <TableHead>
             <TableRow>
               {tableHeaders.map((tableDataHeader, i) => {
@@ -76,7 +76,7 @@ const CryptoTable = () => {
         </Table>
       </TableContainer>
       {!cryptoList &&
-        <img className={styles.loading} src={loadingGif} />}
+        <img className={styles.loading} src={loadingGif} alt="loading"/>}
     </div>
   );
 };

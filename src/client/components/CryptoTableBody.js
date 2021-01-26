@@ -29,7 +29,7 @@ const CryptoTableBody = ({cryptoList}) => {
         </TableCell>
         <TableCell component='th' scope='row'>
           <div className={styles.nameContainer}>
-            <img className={styles.logo} src={logoMap[cryptocurrency.symbol]} />
+            <img className={styles.logo} src={logoMap[cryptocurrency.symbol]} alt={`${cryptocurrency.name} logo`} />
             <p className={styles.dataBoldText}>{cryptocurrency.name}</p>
             <p className={styles.dataGrayText}>{cryptocurrency.symbol}</p>
           </div>
